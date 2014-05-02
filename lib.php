@@ -44,10 +44,24 @@ function local_groupautoenrol_user_enrolled($eventdata) {
       } 
 
       if (!$already_member) {
-        // array_rand return key not value !
-        $rand_keys = array_rand($groups_to_use);
-        $group2add = $groups_to_use[$rand_keys];
-        groups_add_member($group2add, $eventdata->userid);
+
+        if ($groupautoenrol->enrol_method == "1") { //  0 = random, 1 = alpha, 2 = balanced
+          foreach ($groups_to_use as $group) {
+            $groupname = $group->name;
+            if (( $groupname[strlen($groupname)-2] <= $USER->lastname[0] ) 
+               && ( $groupname[strlen($groupname)-1] >= $USER->lastname[0] )) {
+                groups_add_member($group->id, $eventdata->userid);
+                break; // exit foreach (is it working ?)
+            }
+          }
+        }
+        else {
+          // array_rand return key not value !
+          $rand_keys = array_rand($groups_to_use);
+          $group2add = $groups_to_use[$rand_keys];
+          groups_add_member($group2add, $eventdata->userid);
+        }
+
       }
     }
   }

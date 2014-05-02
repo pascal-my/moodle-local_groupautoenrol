@@ -46,9 +46,15 @@ else if ( $data = $form->get_data() ) {
   $groupautoenrol = new stdClass();
   $groupautoenrol->courseid = $course->id;
   $groupautoenrol->enable_enrol = $data->enable_enrol;
+  $groupautoenrol->enrol_method = $data->enrol_method;
+//  if (isset($data->rolelist)) // Could be not set
+//    $groupautoenrol->rolelist = implode(",", $data->rolelist); // See comments in form file
+  $groupautoenrol->profile_field = $data->profile_field;
   $groupautoenrol->use_groupslist = $data->use_groupslist;
   if (isset($data->groupslist)) // Could be not set
     $groupautoenrol->groupslist = implode(",", $data->groupslist);
+  if (isset($data->balises)) // Could be not set
+    $groupautoenrol->balises = $data->balises;
 
   $record = $DB->get_record('groupautoenrol', array('courseid' => $course->id), 'id');
   if (!$record) {
@@ -58,7 +64,7 @@ else if ( $data = $form->get_data() ) {
       $groupautoenrol->id = $record->id;
       $DB->update_record('groupautoenrol', $groupautoenrol);
   }
-  redirect( new moodle_url("$CFG->wwwroot/local/groupautoenrol/manage_auto_group_enrol.php", array('id' => $course->id) ));
+  redirect( new moodle_url("$CFG->wwwroot/local/groupautoenrol/manage_auto_group_enrol.php", array('id' => $course->id) ) );
 }
 
 
