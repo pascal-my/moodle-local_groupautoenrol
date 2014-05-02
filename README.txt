@@ -6,10 +6,6 @@ Plugin to randomly auto enrol students in Moodle courses groups when they are en
 
 - The plugin use "user_enrolled" Moodle event
 - If a selected group is deleted, the plugin will ignore it.
-- 
-- En cas d'inscription par clé de groupe, l'utilisateur est d'abord inscrit automatiquement (selon les paramètres définis) puis il est inscrit au groupe désigné par la clé.
-Selon les paramètres, il peut donc se retrouver inscrits à 1 ou 2 groupes (si le tirage aléatoire a désigné le même groupe que celui de la clé). Je n'ai pas eu de message d'erreur lorsque Moodle tente d'inscrire l'utilisateur dans le groupe de la clé même losque celui a déjà été inscrit par le plugin "inscription_auto" dans le même groupe.
-
 
 Stable version : 
 - you can choose to enable the plugin in each course
@@ -34,15 +30,15 @@ FRENCH
 Plugin permettant l'inscription automatique aléatoire des étudiants dans les groupes des cours lors de leur inscription au cours (qu'elle se fasse par la synchronisation des cohortes, par clé d'inscription ou manuellement).
 
 Précisions
-- Ce plugin utilise l'évènement "user_enrolled" pour détecter l'inscription d'un utilisateur dans un groupe.
+- Ce plugin utilise l'évènement "user_enrolled" pour détecter l'inscription d'un utilisateur dans un cours.
 - Si un groupe sélectionné pour l'inscription auto est supprimé, il sera simplement ignoré par le plugin (cela ne pose pas de blocage).
 - En cas d'inscription par clé de groupe, l'utilisateur est d'abord inscrit automatiquement (selon les paramètres définis) puis il est inscrit au groupe désigné par la clé.
 Selon les paramètres, il peut donc se retrouver inscrits à 1 ou 2 groupes (si le tirage aléatoire a désigné le même groupe que celui de la clé). Je n'ai pas eu de message d'erreur lorsque Moodle tente d'inscrire l'utilisateur dans le groupe de la clé même losque celui a déjà été inscrit par le plugin "inscription_auto" dans le même groupe.
 
 
-Version stable (1.1) : 
+Version stable (1.1) :
 - plugin activable par cours
-- l'inscription automatique se fait dans tous les groupes des cours ou uniquement dans des groupes sélectionnés.
+- l'inscription automatique se fait dans tous les groupes du cours ou uniquement dans des groupes sélectionnés.
 
 Version en cours de développement :
 - il sera possible de choisir les rôles concernés par l'inscription automatique
