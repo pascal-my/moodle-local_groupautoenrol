@@ -18,7 +18,7 @@ $PAGE->set_url($url);
 
 // TODO we need to gracefully shutdown if course not found
 $course   = $DB->get_record('course', array('id' => $id), '*', MUST_EXIST);
-$context  = get_context_instance(CONTEXT_COURSE, $course->id);
+$context  = context_course::instance($course->id);
 
 require_login($course);
 
