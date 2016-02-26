@@ -50,9 +50,8 @@ Version en cours de développement (1.2) :
 - plusieurs modes d'inscriptions seront disponibles : aléatoire, réparti ou alphabétique.
 
 
-Requis : 
-- Moodle 2.5 (Non testé avec les versions précédentes mais il doit surement fonctionner avec toutes les versions de Moodle 2.x)
-Version stable testée avec Moodle 2.7 et 3.0.2
+Requiert Moodle 2.5 (Non testé avec les versions précédentes mais il doit surement fonctionner avec toutes les versions de Moodle 2.x)
+La version stable a été testée avec succès sur Moodle 2.7 et 3.0.2
 
 
 installation
