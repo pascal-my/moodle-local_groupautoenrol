@@ -1,3 +1,5 @@
+Warning : USE THE STABLE BRANCH !
+
 moodle-local-groupautoenrol
 ===========================
 
@@ -7,24 +9,27 @@ Plugin to randomly auto enrol students in Moodle courses groups when they are en
 - The plugin use "user_enrolled" Moodle event
 - If a selected group is deleted, the plugin will ignore it.
 
-Stable version : 
+
+Stable version (v1.1) : 
 - you can choose to enable the plugin in each course
 - you can choose to auto-enrol students in all existing course or specific ones
 
-Dev version : (in progress)
+Dev version (v1.2) : (in progress)
 - you can choose which role(s) the enrolment will works
 - you can choose between random, balanced or alphabetic enrolment
 
 
-Requires : 
-- Moodle 2.5 (we did not test it with the others versions)
+Requires Moodle 2.5 (we did not test it with the previous versions but should work with all 2.x)
+Stable version tested with Moodle 2.7 and Moodle 3.0.2
+
+
 
 installation
 ------------
 
 * Copy the directory 'groupautoenrol' into the `moodledir/local` directory.
 * Connect to moodle as an administrator and install the plugin.
-
+* Enable the plugin in each course you want
 
 FRENCH
 Plugin permettant l'inscription automatique aléatoire des étudiants dans les groupes des cours lors de leur inscription au cours (qu'elle se fasse par la synchronisation des cohortes, par clé d'inscription ou manuellement).
@@ -40,13 +45,15 @@ Version stable (1.1) :
 - plugin activable par cours
 - l'inscription automatique se fait dans tous les groupes du cours ou uniquement dans des groupes sélectionnés.
 
-Version en cours de développement :
+Version en cours de développement (1.2) :
 - il sera possible de choisir les rôles concernés par l'inscription automatique
 - plusieurs modes d'inscriptions seront disponibles : aléatoire, réparti ou alphabétique.
 
 
 Requis : 
-- Moodle 2.5 (Nous ne l'avons testé qu'en 2.5 mais il doit surement fonctionner avec toutes les versions de Moodle 2.x)
+- Moodle 2.5 (Non testé avec les versions précédentes mais il doit surement fonctionner avec toutes les versions de Moodle 2.x)
+Version stable testée avec Moodle 2.7 et 3.0.2
+
 
 installation
 ------------
@@ -56,12 +63,11 @@ installation
 * Activer et paramétrer le plugin dans chaque cours voulu.
 
 
-
 credits
 -------
 
 * @copyright 2014 Université Paris Ouest Nanterre - Service COMETE
-pascal.maury@u-paris10.fr {@link http://www.service-comete.u-paris10.fr}
+pascal.maury@inalco.fr {@link http://www.service-comete.u-paris10.fr}
 
 
 licence
