@@ -20,9 +20,7 @@ Dev version (v1.2) : (in progress)
 - you can choose between random, balanced or alphabetic enrolment
 
 
-Requires : 
-- Moodle 2.5 (we did not test it with the others versions)
-
+Requires Moodle 2.5 (we did not test it with the previous versions but should work with all 2.x)
 Stable version tested with Moodle 2.7 and Moodle 3.0.2
 
 
@@ -53,9 +51,8 @@ Version en cours de développement (1.2) :
 - plusieurs modes d'inscriptions seront disponibles : aléatoire, réparti ou alphabétique.
 
 
-Requis : 
-- Moodle 2.5 (Non testé avec les versions précédentes mais il doit surement fonctionner avec toutes les versions de Moodle 2.x)
-Version stable testée avec Moodle 2.7 et 3.0.2
+Requiert Moodle 2.5 (Non testé avec les versions précédentes mais il doit surement fonctionner avec toutes les versions de Moodle 2.x)
+La version stable a été testée avec succès sur Moodle 2.7 et 3.0.2
 
 
 installation
