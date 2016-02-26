@@ -6,7 +6,7 @@ function local_groupautoenrol_user_enrolled($eventdata) {
 
   $groupautoenrol = $DB->get_record('groupautoenrol', array('courseid' => $eventdata->courseid));
 
-  if (isset($groupautoenrol) && !$groupautoenrol && ($groupautoenrol->enable_enrol == "1")) {
+  if (isset($groupautoenrol) && ($groupautoenrol->enable_enrol == "1")) {
 
     $enrol = $DB->get_record('enrol', array('id' => $eventdata->enrolid), "roleid");
 
@@ -75,7 +75,7 @@ function local_groupautoenrol_user_enrolled($eventdata) {
  * @param object    $context
  * @return void
  */
-function local_groupautoenrol_extends_settings_navigation($settings, $context) {
+function local_groupautoenrol_extend_settings_navigation($settings, $context) {
     global $CFG;
 
     // If we're viewing course and the course is not the front page.
