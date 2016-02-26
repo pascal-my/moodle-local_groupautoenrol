@@ -11,11 +11,11 @@ Plugin to randomly auto enrol students in Moodle courses groups when they are en
 - If a selected group is deleted, the plugin will ignore it.
 
 
-Stable version : 
+Stable version (v1.1) : 
 - you can choose to enable the plugin in each course
 - you can choose to auto-enrol students in all existing course or specific ones
 
-Dev version : (in progress)
+Dev version (v1.2) : (in progress)
 - you can choose which role(s) the enrolment will works
 - you can choose between random, balanced or alphabetic enrolment
 
@@ -48,14 +48,14 @@ Version stable (1.1) :
 - plugin activable par cours
 - l'inscription automatique se fait dans tous les groupes du cours ou uniquement dans des groupes sélectionnés.
 
-Version en cours de développement :
+Version en cours de développement (1.2) :
 - il sera possible de choisir les rôles concernés par l'inscription automatique
 - plusieurs modes d'inscriptions seront disponibles : aléatoire, réparti ou alphabétique.
 
 
 Requis : 
 - Moodle 2.5 (Non testé avec les versions précédentes mais il doit surement fonctionner avec toutes les versions de Moodle 2.x)
-Testé avec Moodle 2.7 et 3.0.2
+Version stable testée avec Moodle 2.7 et 3.0.2
 
 
 installation
