@@ -1,3 +1,6 @@
+DO NOT USE THIS VERSION !
+USE THE STABLE BRANCH !
+
 moodle-local-groupautoenrol
 ===========================
 
@@ -19,6 +22,9 @@ Dev version : (in progress)
 
 Requires : 
 - Moodle 2.5 (we did not test it with the others versions)
+
+Stable version tested with Moodle 2.7 and Moodle 3.0.2
+
 
 
 installation
@@ -48,7 +54,8 @@ Version en cours de développement :
 
 
 Requis : 
-- Moodle 2.5 (Nous ne l'avons testé qu'en 2.5 mais il doit surement fonctionner avec toutes les versions de Moodle 2.x)
+- Moodle 2.5 (Non testé avec les versions précédentes mais il doit surement fonctionner avec toutes les versions de Moodle 2.x)
+Testé avec Moodle 2.7 et 3.0.2
 
 
 installation
@@ -63,7 +70,7 @@ credits
 -------
 
 * @copyright 2014 Université Paris Ouest Nanterre - Service COMETE
-pascal.maury@u-paris10.fr {@link http://www.service-comete.u-paris10.fr}
+pascal.maury@inalco.fr {@link http://www.service-comete.u-paris10.fr}
 
 
 licence
