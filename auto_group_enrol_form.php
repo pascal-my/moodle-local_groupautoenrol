@@ -10,10 +10,9 @@
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU General Public License for more details.
-//.
+//
 // You should have received a copy of the GNU General Public License
 // along with Moodle. If not, see <http://www.gnu.org/licenses/>.
-
 /**
  * Displays form
  *
@@ -21,7 +20,6 @@
  * @copyright  2016 Pascal Maury - Université Paris Ouest - service COMETE
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
- 
 defined('MOODLE_INTERNAL') || die;
 require_once("$CFG->libdir/formslib.php");
 
@@ -41,7 +39,8 @@ function auto_group_enrol_form(MoodleQuickForm $mform, $page, $course) {
     $allgroupscourse = groups_get_all_groups($course->id);
     // Group(s) must be created first.
     if (count($allgroupscourse) == 0) {
-        $mform->addElement('static', 'no_group_found', '', get_string('auto_group_enrol_form_no_group_found', 'local_groupautoenrol', (string)$course->id));
+        $mform->addElement('static', 'no_group_found', '', get_string('auto_group_enrol_form_no_group_found', 
+            'local_groupautoenrol', (string)$course->id));
     } else {
         $instance = false;
         if ( isset($course->id) ) {
@@ -55,7 +54,7 @@ function auto_group_enrol_form(MoodleQuickForm $mform, $page, $course) {
             $enableenrol = 0;
         }
         $mform->setDefault('enable_enrol', $enableenrol);
-    
+
         $mform->addElement('checkbox', 'use_groupslist', get_string('auto_group_form_usegroupslist', 'local_groupautoenrol'));
         if ($instance != false) {
             $usegroupslist = $instance->use_groupslist;
@@ -64,12 +63,13 @@ function auto_group_enrol_form(MoodleQuickForm $mform, $page, $course) {
         }
         $mform->setDefault('use_groupslist', $usegroupslist);
         $mform->disabledIf('use_groupslist', 'enable_enrol');
-    
+
         $fields = array();
         foreach ($allgroupscourse as $group) {
             $fields[$group->id] = $group->name;
         }
-        $select = $mform->addElement('select', 'groupslist', get_string('auto_group_form_groupslist', 'local_groupautoenrol'), $fields);
+        $select = $mform->addElement('select', 'groupslist', get_string('auto_group_form_groupslist', 
+            'local_groupautoenrol'), $fields);
         $select->setMultiple(true);
         $mform->disabledIf('groupslist', 'enable_enrol');
         $mform->disabledIf('groupslist', 'use_groupslist');
