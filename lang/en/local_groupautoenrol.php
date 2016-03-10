@@ -1,12 +1,11 @@
 <?php
-
 $string['pluginname'] = 'Automatic enrolment in groups';
 $string['coursemenu_item'] = 'Auto-enrol in groups';
 
-// buttons and links
+// Buttons and links.
 $string['menu_auto_groups'] = 'Auto-enrol in groups';
 
-// Course settings form
+// Course settings form.
 $string['auto_group_form_page_title'] = 'Auto-enrol settings';
 $string['auto_group_form_enable_enrol'] = 'Enable automatic enrolment in groups for this course';
 $string['auto_group_form_rand_method'] = 'Random enrolment';
