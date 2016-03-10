@@ -31,13 +31,11 @@
 function local_groupautoenrol_user_enrolled($eventdata) {
     global $CFG, $USER, $DB;
     require_once($CFG->dirroot.'/group/lib.php');
-
     $groupautoenrol = $DB->get_record('groupautoenrol', array('courseid' => $eventdata->courseid));
 
     if (isset($groupautoenrol) && ($groupautoenrol->enable_enrol == "1")) {
 
         $enrol = $DB->get_record('enrol', array('id' => $eventdata->enrolid), "roleid");
-    
         if ($groupautoenrol->use_groupslist == "1") {
             // If use_groupslist == 1, we need to check.
             // a) if the list is not empty.
@@ -103,19 +101,17 @@ function local_groupautoenrol_user_enrolled($eventdata) {
  */
 function local_groupautoenrol_extend_settings_navigation($settings, $context) {
     global $CFG;
-
     // If we're viewing course and the course is not the front page.
     if ( ($context instanceof context_course || $context instanceof context_module )  && $context->instanceid > 1) {
-
-      if (has_capability("moodle/course:managegroups", $context)) {
-        // Add link to manage automatic group enrolment.
-        $url = new moodle_url(
-            '/local/groupautoenrol/manage_auto_group_enrol.php',
-            array('id'=> $context->instanceid)
-        );
-        $root = $settings->find('courseadmin', navigation_node::TYPE_COURSE);
-        $usermenu = $root->get('users');
-        $usermenu->add(get_string('menu_auto_groups', 'local_groupautoenrol'), $url);
-      }
+        if (has_capability("moodle/course:managegroups", $context)) {
+            // Add link to manage automatic group enrolment.
+            $url = new moodle_url(
+                '/local/groupautoenrol/manage_auto_group_enrol.php',
+                array('id'=> $context->instanceid)
+            );
+            $root = $settings->find('courseadmin', navigation_node::TYPE_COURSE);
+            $usermenu = $root->get('users');
+            $usermenu->add(get_string('menu_auto_groups', 'local_groupautoenrol'), $url);
+        }
     }
 }
