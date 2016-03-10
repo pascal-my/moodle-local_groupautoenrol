@@ -69,4 +69,3 @@ function auto_group_enrol_form(MoodleQuickForm $mform, $page, $course) {
         }
     }
 }
-
