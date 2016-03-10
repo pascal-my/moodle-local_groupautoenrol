@@ -20,7 +20,7 @@
  * @copyright  2016 Pascal Maury - Université Paris Ouest - service COMETE
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
- 
+
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->version = 2016022601;    // The (date) version of this module + 2 extra digital for daily versions.
