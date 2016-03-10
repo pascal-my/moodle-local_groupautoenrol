@@ -20,13 +20,13 @@
  * @copyright  2016 Pascal Maury - Université Paris Ouest - service COMETE
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
- 
+
 /**
  * Action when user is enrolled
  *
  * @package         local_groupautoenrol
  * @param object    $eventdata
- * @return bool     true if all ok 
+ * @return bool     true if all ok
  */
 function local_groupautoenrol_user_enrolled($eventdata) {
     global $CFG, $USER, $DB;
@@ -56,17 +56,17 @@ function local_groupautoenrol_user_enrolled($eventdata) {
         } else { // If use_groupslist == 0, use all groups course.
             $groupstouse = groups_get_all_groups($eventdata->courseid);
         }
-    
-        // Checking if there is at least 1 group
+
+        // Checking if there is at least 1 group.
         if (count($groupstouse) > 0) {
             // Checking if user is not already into theses groups.
             $alreadymember = false;
             foreach ($groupstouse as $group) {
                 if ( groups_is_member($group->id, $eventdata->userid )) {
-                $alreadymember = true;
+                    $alreadymember = true;
                 }
-            } 
-    
+            }
+
             if (!$alreadymember) {
                 // array_rand return key not value !
                 $randkeys = array_rand($groupstouse);
@@ -95,7 +95,7 @@ function local_groupautoenrol_extend_settings_navigation($settings, $context) {
             // Add link to manage automatic group enrolment.
             $url = new moodle_url(
             '/local/groupautoenrol/manage_auto_group_enrol.php',
-            array('id'=> $context->instanceid)
+            array('id' => $context->instanceid)
             );
             $root = $settings->find('courseadmin', navigation_node::TYPE_COURSE);
             $usermenu = $root->get('users');
