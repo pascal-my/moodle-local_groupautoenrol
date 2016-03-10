@@ -21,8 +21,8 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @author      Comete <comete@u-paris10.fr>
  */
-require_once ('../../config.php');
-require_once ('./manage_auto_group_enrol_form.php');
+require_once('../../config.php');
+require_once('./manage_auto_group_enrol_form.php');
 
 $id = required_param('id', PARAM_INT);
 $url = new moodle_url("$CFG->wwwroot/local/groupautoenrol/manage_auto_group_enrol.php", array('id' => $id) );
