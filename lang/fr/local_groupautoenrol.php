@@ -1,12 +1,11 @@
 <?php
-
 $string['pluginname'] = 'Inscription automatique dans les groupes';
 $string['coursemenu_item'] = 'Groupes : Inscription auto';
 
-// buttons and links
+// Buttons and links.
 $string['menu_auto_groups'] = 'Groupes : Inscription auto';
 
-// Course settings form
+// Course settings form.
 $string['auto_group_form_page_title'] = 'Paramètres d\'inscription automatiques';
 $string['auto_group_form_enable_enrol'] = 'Activer l\'inscription automatique dans les groupes pour ce cours';
 $string['auto_group_form_rand_method'] = 'Inscrire les étudiants aléatoirement dans les groupes';
