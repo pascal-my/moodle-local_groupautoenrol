@@ -23,7 +23,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2016022601;    // The (date) version of this module + 2 extra digital for daily versions.
+$plugin->version = 2016031001;    // The (date) version of this module + 2 extra digital for daily versions.
                                   // This version number is displayed into /admin/forms.php.
 $plugin->requires = 2013040500;   // Requires this Moodle version - at least 2.0.
 $plugin->cron = 0;
