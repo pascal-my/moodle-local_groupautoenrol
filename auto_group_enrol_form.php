@@ -29,9 +29,7 @@ function auto_group_enrol_form(MoodleQuickForm $mform, $page, $course) {
     // Group(s) must be created first.
     if (count($allgroupscourse) == 0) {
         $mform->addElement('static', 'no_group_found', '', get_string('auto_group_enrol_form_no_group_found', 'local_groupautoenrol', (string)$course->id));
-    }
-    else {
-
+    } else {
         $instance = false;
         if ( isset($course->id) ) {
             $instance = $DB->get_record('groupautoenrol', array('courseid' => $course->id));
@@ -40,8 +38,7 @@ function auto_group_enrol_form(MoodleQuickForm $mform, $page, $course) {
         $mform->addElement('checkbox', 'enable_enrol', get_string('auto_group_form_enable_enrol', 'local_groupautoenrol'));
         if ($instance != false) {
             $enable_enrol = $instance->enable_enrol;
-        }
-        else {
+        } else {
             $enable_enrol = 0;
         }
         $mform->setDefault('enable_enrol', $enable_enrol);
@@ -49,8 +46,7 @@ function auto_group_enrol_form(MoodleQuickForm $mform, $page, $course) {
         $mform->addElement('checkbox', 'use_groupslist', get_string('auto_group_form_usegroupslist', 'local_groupautoenrol'));
         if ($instance != false) {
             $use_groupslist = $instance->use_groupslist;
-        } 
-        else {
+        } else {
             $use_groupslist = 0;
         }
         $mform->setDefault('use_groupslist', $use_groupslist);
