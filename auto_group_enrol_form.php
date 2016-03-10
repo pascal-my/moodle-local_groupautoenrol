@@ -1,5 +1,5 @@
 <?php
-// This file is part of".
+// This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -13,18 +13,31 @@
 //.
 // You should have received a copy of the GNU General Public License
 // along with Moodle. If not, see <http://www.gnu.org/licenses/>.
-    
-defined('MOODLE_INTERNAL') || die;
 
+/**
+ * Displays form
+ *
+ * @package    local_groupautoenrol
+ * @copyright  2016 Pascal Maury - Université Paris Ouest - service COMETE
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+ 
+defined('MOODLE_INTERNAL') || die;
 require_once("$CFG->libdir/formslib.php");
 
+/**
+ * Displays form
+ *
+ * @param object $mform
+ * @param object $page
+ * @param object $course
+ * @return nothing
+ */
 function auto_group_enrol_form(MoodleQuickForm $mform, $page, $course) {
     global $CFG, $USER, $DB;
 
     $mform->addElement('header', 'enrol', 'Paramètres');
-
     $data = array();
-
     $allgroupscourse = groups_get_all_groups($course->id);
     // Group(s) must be created first.
     if (count($allgroupscourse) == 0) {
@@ -37,19 +50,19 @@ function auto_group_enrol_form(MoodleQuickForm $mform, $page, $course) {
 
         $mform->addElement('checkbox', 'enable_enrol', get_string('auto_group_form_enable_enrol', 'local_groupautoenrol'));
         if ($instance != false) {
-            $enable_enrol = $instance->enable_enrol;
+            $enableenrol = $instance->enable_enrol;
         } else {
-            $enable_enrol = 0;
+            $enableenrol = 0;
         }
-        $mform->setDefault('enable_enrol', $enable_enrol);
+        $mform->setDefault('enable_enrol', $enableenrol);
     
         $mform->addElement('checkbox', 'use_groupslist', get_string('auto_group_form_usegroupslist', 'local_groupautoenrol'));
         if ($instance != false) {
-            $use_groupslist = $instance->use_groupslist;
+            $usegroupslist = $instance->use_groupslist;
         } else {
-            $use_groupslist = 0;
+            $usegroupslist = 0;
         }
-        $mform->setDefault('use_groupslist', $use_groupslist);
+        $mform->setDefault('use_groupslist', $usegroupslist);
         $mform->disabledIf('use_groupslist', 'enable_enrol');
     
         $fields = array();
