@@ -36,12 +36,12 @@ require_once("$CFG->libdir/formslib.php");
 function auto_group_enrol_form(MoodleQuickForm $mform, $page, $course) {
     global $CFG, $USER, $DB;
     $mform->addElement('header','enrol', 'Paramètres');
-    $data = array();
-    $all_groups_course = groups_get_all_groups($course->id);
-    // Group(s) must be created first.
-    if (count($all_groups_course) == 0) {
+	$data = array();
+	$all_groups_course = groups_get_all_groups($course->id);
+	// Group(s) must be created first.
+	if (count($all_groups_course) == 0) {
 		$mform->addElement('static', 'no_group_found', '', get_string('auto_group_enrol_form_no_group_found', 'local_groupautoenrol', (string)$course->id));
-    } else {
+	} else {
 		$instance = false;
 		if ( isset($course->id) ) {
 			$instance = $DB->get_record('groupautoenrol', array('courseid' => $course->id));
@@ -53,8 +53,8 @@ function auto_group_enrol_form(MoodleQuickForm $mform, $page, $course) {
 			$enable_enrol = 0;
 		}
 		$mform->setDefault('enable_enrol', $enable_enrol);
-/*    
-// Option to finalise : if we want to let teacher choose which role must be concerned, we have to filter here the role list (show only role that teacher can manage).
+	/*    
+	// Option to finalise : if we want to let teacher choose which role must be concerned, we have to filter here the role list (show only role that teacher can manage).
 		$roles = $DB->get_records('role', null, 'sortorder ASC');
 		$roles_choices = array();
 		foreach ($roles as $role) {
@@ -72,9 +72,9 @@ function auto_group_enrol_form(MoodleQuickForm $mform, $page, $course) {
 		} else {
 			$mform->setDefault('rolelist', "5");
 		}
-*/
-// Old option : ne l'inscrire que s'il n'est pas déjà inscrit dans un cours.
-/*    
+	*/
+	// Old option : ne l'inscrire que s'il n'est pas déjà inscrit dans un cours.
+	/*    
 		$mform->addElement('checkbox', 'no_check', get_string('auto_group_form_no_check', 'local_groupautoenrol'));
 		if ($instance != false) {
 			$no_check = $instance->no_check;
@@ -83,15 +83,15 @@ function auto_group_enrol_form(MoodleQuickForm $mform, $page, $course) {
 		}
 		$mform->setDefault('no_check', $no_check);
 		$mform->disabledIf('no_check', 'enable_enrol');*/
-// Option not ready : use pattern to select groups (alternative to groups list).
-/*      
+	// Option not ready : use pattern to select groups (alternative to groups list).
+	/*      
 		$mform->addElement('text', 'pattern', get_string('auto_group_form_pattern', 'local_groupautoenrol'), 'maxlength="100" size="25" ');
 		if ($instance != false) {
 			$pattern = $instance->pattern;
 			$mform->setDefault('pattern', $pattern);
 		}
 		$mform->disabledIf('pattern', 'enable_enrol');*/
-
+	
 		$mform->addElement('checkbox', 'use_groupslist', get_string('auto_group_form_usegroupslist', 'local_groupautoenrol'));
 		if ($instance != false) {
 			$use_groupslist = $instance->use_groupslist;
@@ -104,7 +104,7 @@ function auto_group_enrol_form(MoodleQuickForm $mform, $page, $course) {
 		foreach ($all_groups_course as $group) {
 			$fields[$group->id] = $group->name;
 		}
-
+	
 		$select = $mform->addElement('select', 'groupslist', get_string('auto_group_form_groupslist', 'local_groupautoenrol'), $fields);
 		$select->setMultiple(true);
 		$mform->disabledIf('groupslist', 'enable_enrol');
@@ -122,7 +122,7 @@ function auto_group_enrol_form(MoodleQuickForm $mform, $page, $course) {
 		}
 		$mform->setDefault('enrol_method', $enrol_method);
 		$mform->disabledIf('enrol_method', 'enable_enrol');
-
+	
 		$fields = array("0" => "Nom","1" => "Prénom","2" => "Numéro d'identification","3" => "Adresse de courriel","4" => "Ville","5" => "Pays","6" => "Status principal", "7" => "Département");
 		$mform->addElement('select', 'profile_field', get_string('auto_group_form_alpha_field', 'local_groupautoenrol'), $fields);
 		if ($instance != false) {
@@ -134,7 +134,7 @@ function auto_group_enrol_form(MoodleQuickForm $mform, $page, $course) {
 		$mform->disabledIf('profile_field', 'enable_enrol');
 		$mform->disabledIf('profile_field', 'enrol_method', 'neq', 1);
 		$mform->addElement('text', 'balises', get_string('auto_group_form_balises', 'local_groupautoenrol'), array('maxlength'=>'10', 'size'=>'10'));
-
+	
 		$mform->setType('balises', PARAM_TEXT);
 		if ($instance != false) {
 			$balises = $instance->balises;
