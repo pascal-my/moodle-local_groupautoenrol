@@ -15,6 +15,8 @@
 // along with Moodle. If not, see <http://www.gnu.org/licenses/>.
 /**
  * Setup "Automatics groups" link in Courseadmin->users menu
+ * 
+ * Test TravisCI
  *
  * @package         local_groupautoenrol
  * @param array     $settings
