@@ -14,17 +14,16 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle. If not, see <http://www.gnu.org/licenses/>.
 /**
- * Events declaration
+ * Observers declaration
  *
  * @package    local_groupautoenrol
  * @copyright  2016 Pascal Maury - Université Paris Ouest - service COMETE
+ * @author     P. Maury <comete@u-paris10.fr>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-$handlers = array (
-    'user_enrolled' => array (
-        'handlerfile'      => '/local/groupautoenrol/lib.php',
-        'handlerfunction'  => 'local_groupautoenrol_user_enrolled',
-        'schedule'         => 'instant',
-        'internal'         => 1,
+$observers = array(
+    array(
+        'eventname' => '\core\event\user_enrolment_created',
+        'callback'  => 'local_groupautoenrol_observer::user_is_enrolled',
     )
 );
