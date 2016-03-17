@@ -34,7 +34,7 @@ require_once("$CFG->libdir/formslib.php");
 function auto_group_enrol_form(MoodleQuickForm $mform, $page, $course) {
     global $CFG, $USER, $DB;
 
-    $mform->addElement('header', 'enrol', 'Paramètres');
+    $mform->addElement('header', 'enrol', get_string('settings'));
     $data = array();
     $allgroupscourse = groups_get_all_groups($course->id);
     // Group(s) must be created first.
