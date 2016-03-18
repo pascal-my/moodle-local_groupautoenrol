@@ -1,8 +1,10 @@
-** WARNING : if you use github, use STABLE branch (v1.1.1) ! The code on master branch (v1.2) is not working ! ** 
+This plugin is depreciated : it is only avalaible for Moodle 2.x
+See the new : https://github.com/pascal-my/moodle-admin_tool_groupautoenrol
 
 Version history :
 - 1.1 : stable version not working (bug)
-- 1.1.1 : stable version working
+- 1.1.1 : stable version working as local plugin for Moodle 2.x
+- 1.1.2 : stable version working as admin tool for Moodle 3.x (see https://github.com/pascal-my/moodle-admin_tool_groupautoenrol)
 - 1.2 : development stopped for now (see master branch, https://moodle.org/mod/forum/discuss.php?d=259371 and https://moodle.org/plugins/local_groupautoenrol)
 
 
@@ -23,7 +25,7 @@ In this stable version (1.1.1) :
 - you can choose to enable the plugin in each course
 - you can choose to auto-enrol students in all existing course or specific ones
 
-Tested with Moodle 2.5, Moodle 2.7 and Moodle 3.0.2
+Tested with Moodle 2.5, Moodle 2.7
 (we did not test it with the others versions but should work with all 2.x)
 
 
@@ -48,7 +50,7 @@ Version stable (1.1.1) :
 - plugin activable par cours
 - l'inscription automatique se fait dans tous les groupes du cours ou uniquement dans des groupes sélectionnés.
 
-Version testée avec Moodle 2.5, Moodle 2.7 et 3.0.2 (Non testé avec les autres versions mais il doit surement fonctionner avec toutes les versions de Moodle 2.x)
+Version testée avec Moodle 2.5, Moodle 2.7 (Non testé avec les autres versions mais il doit surement fonctionner avec toutes les versions de Moodle 2.x)
 
 
 installation
