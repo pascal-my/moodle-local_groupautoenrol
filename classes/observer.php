@@ -41,7 +41,9 @@ class local_groupautoenrol_observer {
         require_once($CFG->dirroot.'/group/lib.php');
         $enroldata = $event->get_record_snapshot($event->objecttable, $event->objectid);
         $groupautoenrol = $DB->get_record('groupautoenrol', array('courseid' => $event->courseid));
-        if (isset($groupautoenrol) && ($groupautoenrol->enable_enrol == "1")) {
+        if (isset($groupautoenrol) &&  // Could be removed ?
+			($groupautoenrol != false) && // If the plugin has never been actived, the record does not exist and $groupautoenrol = false.
+				($groupautoenrol->enable_enrol == "1")) { // Plugin is actived for this course.
             $enrol = $DB->get_record('enrol', array('id' => $enroldata->enrolid), "roleid");
             if ($groupautoenrol->use_groupslist == "1") {
                 // If use_groupslist == 1, we need to check.
