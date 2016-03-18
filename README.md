@@ -1,4 +1,5 @@
-This plugin is depreciated : it is only avalaible for Moodle 2.x
+This plugin is depreciated : it is only avalaible for Moodle 2.x.
+
 See the new : https://github.com/pascal-my/moodle-admin_tool_groupautoenrol
 
 Version history :
