@@ -1,3 +1,7 @@
+**This plugin is closed, see https://github.com/LdesignMedia/moodle-tool_groupautoenrol**
+
+
+
 ** WARNING : if you use github, use STABLE branch (v1.1.1) ! The code on master branch (v1.2) is not working ! ** 
 
 Version history :
